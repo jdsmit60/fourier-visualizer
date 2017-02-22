@@ -23,3 +23,10 @@ used in each sum.
 1. Switch to [numerical approximation](https://en.wikipedia.org/wiki/Numerical_integration) of coefficients
   * I am currently leaning towards an [Adaptive Simpson's Method](https://en.wikipedia.org/wiki/Adaptive_Simpson's_method) algorithm
 2. Use [GNU Getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html) to take command-line arguments for changeable variables instead of recompiling every time
+
+## Eventual Goals
+1. Animate the visualizations
+2. Make the application portable
+ * Switch from Bash to Python?
+3. Improve performance by using multiple CPU threads
+4. Create a GUI
