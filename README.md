@@ -28,4 +28,6 @@ used in each sum.
 2. Make the application portable
  * Switch from Bash to Python?
 3. Improve performance by using multiple CPU threads
-4. Create a GUI
+4. Merge all of the C++ into one program that can handle any arbitrary function
+ * This may require a [recursive descent parser](https://en.wikipedia.org/wiki/Recursive_descent_parser)
+5. Create a GUI
