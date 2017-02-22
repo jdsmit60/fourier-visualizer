@@ -1,11 +1,17 @@
 // calculates Fourier series points for f(x) = x^2
-#include <iostream>
+#include <fstream>
 #include <iomanip>
 #include <cmath>
 
 using namespace std;
 
 int main(void) {
+
+	// get the output file ready
+	ofstream points;
+	points.open("points", ios::out | ios::trunc); // warning: ios::trunc means existing contents of "points" is deleted
+
+
 	double domainStart, domainEnd, domainStep; // graph domain variables, used for x
 	long double latestY; // used for f(x)
 	int L, upperLimit; // equation variables
@@ -21,11 +27,12 @@ int main(void) {
 		latestY = 0;
 		
 		for(int n=1; n <= upperLimit; n++) {
-			latestY += (/* start An */ (L*L*((2*M_PI*M_PI*n*n-1)*sin(2*M_PI*n)+2*M_PI*n*cos(2*M_PI*n)))/(2*pow(M_PI,3)*pow(n,3)) /* end An */)*cos(n*M_PI*x/L) + (/* start Bn */ (L*L*((1-2*M_PI*M_PI*n*n)*cos(2*M_PI*n)+2*M_PI*n*sin(2*M_PI*n)-1))/(3*pow(M_PI,3)*pow(n,3)) /* end Bn */)*sin(n*M_PI*x/L);
+			latestY += (/* start An */ (L*L*((2*M_PI*M_PI*n*n-1)*sin(2*M_PI*n)+2*M_PI*n*cos(2*M_PI*n)))/(2*pow(M_PI,3)*pow(n,3)) /* end An */)*cos(n*M_PI*x/L) + (/* start Bn */ /*(L*L*((1-2*M_PI*M_PI*n*n)*cos(2*M_PI*n)+2*M_PI*n*sin(2*M_PI*n)-1))/(3*pow(M_PI,3)*pow(n,3))*/ 0 /* end Bn */)*sin(n*M_PI*x/L);
 		}
 
-		cout << setprecision(20) << x << " " << latestY << endl;
+		points << setprecision(20) << x << " " << latestY << endl;
 
 	}
+	points.close();
 	return 0;
 }

@@ -1,11 +1,17 @@
 // calculates Fourier series points for f(x) = x
-#include <iostream>
+#include <fstream>
 #include <iomanip>
 #include <cmath>
 
 using namespace std;
 
 int main(void) {
+
+	// get the output file ready
+	ofstream points;
+	points.open("points", ios::out | ios::trunc); // warning: ios:: trunc means exissting contents of "points" is deleted
+
+
 	double domainStart, domainEnd, domainStep; // graph domain variables, used for x
 	long double latestY; // used for f(x)
 	int L, upperLimit; // equation variables
@@ -24,8 +30,9 @@ int main(void) {
 			latestY += (/* start An */ (2*L*(M_PI*n*sin(M_PI*n)+cos(M_PI*n)-1))/(M_PI*M_PI*n*n) /* end An */)*cos(n*M_PI*x/L) + (/* start Bn */ (2*L*(sin(M_PI*n)-M_PI*n*cos(M_PI*n)))/(M_PI*M_PI*n*n) /* end Bn */)*sin(n*M_PI*x/L);
 		}
 
-		cout << setprecision(20) << x << " " << latestY << endl;
+		points << setprecision(20) << x << " " << latestY << endl;
 
 	}
+	points.close();
 	return 0;
 }
