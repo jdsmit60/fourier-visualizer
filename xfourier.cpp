@@ -27,7 +27,7 @@ int main(void) {
 		latestY = 0;
 		
 		for(int n=1; n <= upperLimit; n++) {
-			latestY += (/* start An */ (2*L*(M_PI*n*sin(M_PI*n)+cos(M_PI*n)-1))/(M_PI*M_PI*n*n) /* end An */)*cos(n*M_PI*i/L) + (/* start Bn */ (2*L*(sin(M_PI*n)-M_PI*n*cos(M_PI*n)))/(M_PI*M_PI*n*n) /* end Bn */)*sin(n*M_PI*i/L);
+			latestY += (/* start An */ (2*L*(M_PI*n*sin(M_PI*n)+cos(M_PI*n)-1))/(M_PI*M_PI*n*n) /* end An */)*cos(n*M_PI*x/L) + (/* start Bn */ (2*L*(sin(M_PI*n)-M_PI*n*cos(M_PI*n)))/(M_PI*M_PI*n*n) /* end Bn */)*sin(n*M_PI*x/L);
 		}
 
 		points << setprecision(20) << x << " " << latestY << endl;
