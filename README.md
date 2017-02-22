@@ -12,8 +12,7 @@ class in the Spring of 2017.
 Each of the x[number]fourier.cpp files is C++ code that calculates all of the data
 points for the Fourier series.
 
-RunFourier.sh ties everything together by putting the output in the right place and 
-passing that output into gnuplot to generate a graph.
+RunFourier.sh ties everything together by passing the output into gnuplot to generate a graph.
 
 RunFourier.sh also collects and displays some statistics about the calculation, such
 as how long it took to run, the number of points generated, and the number of terms
