@@ -23,14 +23,14 @@ int main(void) {
 	double minY;
 	double maxY;
 
-	for(double t = 0; t < timeSteps; t++) {
+	for(int t = 0; t < timeSteps; t++) {
 		filename.str(string()); // reset to blank name so that previous contents of the stream are erased
 		filename << "time" << t << ".dat";
-		datfiles[static_cast<int>(t)].open(filename.str(), ios::out | ios::trunc);
+		datfiles[t].open(filename.str(), ios::out | ios::trunc);
 
 		for(double x = domainStart; x <= domainEnd; x += domainStep) {
-			latestY = (5.0 - t / 24)*sin(x);
-			datfiles[static_cast<int>(t)] << x << " " << latestY << endl;
+			latestY = (5.0 - static_cast<double>(t) / 24)*sin(x);
+			datfiles[t] << x << " " << latestY << endl;
 
 			if(t == 0) {
 				minY = maxY = latestY;
@@ -44,7 +44,7 @@ int main(void) {
 				}
 			}
 		}
-		datfiles[static_cast<int>(t)].close();
+		datfiles[t].close();
 	}
 	ofstream range;
 	range.open("range.dat", ios::out | ios::trunc);
