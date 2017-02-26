@@ -29,7 +29,7 @@ int main(void) {
 		datfiles[t].open(filename.str(), ios::out | ios::trunc);
 
 		for(double x = domainStart; x <= domainEnd; x += domainStep) {
-			latestY = (5.0 - static_cast<double>(t) / 24)*sin(x);
+			latestY = (5.0 - static_cast<double>(t) / frameRate)*sin(x);
 			datfiles[t] << x << " " << latestY << endl;
 
 			if(t == 0) {
