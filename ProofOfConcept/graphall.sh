@@ -2,8 +2,6 @@
 
 datfiles=(time*.dat)
 
-#echo "${datfiles[@]}"
-
 index=0
 
 for file in "${datfiles[@]}"; do
