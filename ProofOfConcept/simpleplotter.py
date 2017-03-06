@@ -28,5 +28,9 @@ for filename in os.listdir( os.curdir ):
 
 datFiles.sort()
 
+index = 0
 for datFile in datFiles:
-	
+	plt.plot(np.loadtxt(datFile,usecols = 0),np.loadtxt(datFile,usecols = 1))
+	plotname = "pyplot" + str(index) + ".png"
+	pylab.savefig(plotname)
+	index += 1
