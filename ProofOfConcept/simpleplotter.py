@@ -1,6 +1,5 @@
 #!/bin/env python
 
-import pylab
 import numpy as np
 import matplotlib.pyplot as plt
 import re
