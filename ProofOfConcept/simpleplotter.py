@@ -24,7 +24,7 @@ datFiles = []
 for filename in os.listdir( os.curdir ):
 	potentialMatch = re.match('time[0-9]*.dat',filename)
 	if(potentialMatch):
-		datFiles.append((potentialMatch.group()))
+		datFiles.append(potentialMatch.group())
 
 datFiles.sort()
 
