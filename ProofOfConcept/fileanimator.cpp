@@ -72,6 +72,11 @@ int main(int argc, char *argv[]) {
 	}
 	ofstream range;
 	range.open("range.dat", ios::out | ios::trunc);
-	range << minY << ':' << maxY;
+	if(fabs(minY - maxY) < 0.001) {
+		range << 0.75*minY << ':' << 1.25*maxY;
+	}
+	else {
+		range << minY << ':' << maxY;
+	}
 	range.close();
 }
