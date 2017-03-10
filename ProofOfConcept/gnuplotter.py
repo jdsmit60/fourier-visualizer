@@ -27,4 +27,4 @@ for datFile in datFiles:
 	subprocess.Popen(command, shell=True, stdin=None, stdout=None, stderr=None)
 	index += 1
 
-subprocess.Popen("ffmpeg -i gnuplot%" + str(digits) + "d.png -vcodec h264 -crf 18 -y graph.mkv -nostdin", shell=True)
+subprocess.Popen("ffmpeg -i gnuplot%" + str(digits) + "d.png -vcodec h264 -r 25 -crf 18 -pix_fmt yuv420p -y graph.mp4 -nostdin", shell=True)
