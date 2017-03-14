@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
 	// but this does not appear to be the case right now so the range calculation remains.
 	double maxPsiSquared = 0.0; // minPsiSquared is fixed at 0 so a variable is unneeded
 
-	double timeStep = 3.3e-19; // let the time step be the period of the most quickly oscillating term (term 20)
+	double timeStep = 3.3e-20; // let the time step be one tenth of the period of the most quickly oscillating term (term 20)
 	double finalTime = 600.0*timeStep; // let the final time be the period of the least quickly oscillating term (term 1)
 	int timeSteps = static_cast<int>(finalTime/timeStep);
 
